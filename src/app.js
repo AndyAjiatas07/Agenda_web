@@ -1,12 +1,16 @@
 import { Button } from "./components/common/button/Button.js";
 import { Contactos } from "./components/sections/Contactos/Contactos.js";
-import { viewContacts, viewNewContact } from "./components/layout/nav/NavControllers.js";
+import { viewContacts, viewNewContact, viewNewTask, viewTasks } from "./components/layout/nav/NavControllers.js";
 
 let app = document.getElementById("app");
 
 let nav = document.getElementById("nav");
 
-nav.appendChild(Button("Usuario", "usuario", "account.svg"));
+nav.appendChild(Button(
+    "Usuario",
+    "usuario",
+    "account.svg"
+));
 nav.appendChild(Button(
     "Agenda",
     "agenda",
@@ -20,8 +24,18 @@ nav.appendChild(Button(
     viewNewContact
 ))
     ;
-nav.appendChild(Button("ToDoList", "todoList", "list.svg"));
-nav.appendChild(Button("Crear tarea", "plus", "add.svg"));
+nav.appendChild(Button(
+    "ToDoList",
+    "todoList",
+    "list.svg",
+    viewTasks
+));
+nav.appendChild(Button(
+    "Crear tarea",
+    "plus",
+    "add.svg",
+    viewNewTask
+));
 
 let container = document.getElementById("container");
 

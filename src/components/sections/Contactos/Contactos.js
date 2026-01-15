@@ -6,7 +6,7 @@ let Contactos = () => {
     sectionContactos.className = "contactos";
 
     let h2 = document.createElement("h2");
-    h2.textContent = "Contactos";
+    h2.textContent = "Lista de contactos";
     sectionContactos.appendChild(h2);
 
     ContactList.forEach((contact) => {

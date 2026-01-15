@@ -1,5 +1,7 @@
-import { Contactos } from "../sections/Contactos/Contactos.js";
-import { NuevoContacto } from "../sections/NuevoContacto/NuevoContacto.js";
+import { Contactos } from "../../sections/Contactos/Contactos.js";
+import { NuevoContacto } from "../../sections/NuevoContacto/NuevoContacto.js";
+import { Tareas } from "../../sections/ToDoList/ToDoList.js";
+import { NuevaTarea } from "../../sections/NuevaTarea/NuevaTarea.js";
 
 let container = document.getElementById("container");
 
@@ -13,4 +15,14 @@ let viewNewContact = function () {
     container.appendChild(NuevoContacto());
 }
 
-export { viewContacts, viewNewContact };
+let viewNewTask = function () {
+    container.innerHTML = "";
+    container.appendChild(NuevaTarea());
+}
+
+let viewTasks = function () {
+    container.innerHTML = "";
+    container.appendChild(Tareas());
+}
+
+export { viewContacts, viewNewContact, viewNewTask, viewTasks };
