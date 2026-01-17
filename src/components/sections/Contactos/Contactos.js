@@ -2,18 +2,19 @@ import { ItemContacto } from "../../common/itemContacto/ItemContacto.js";
 import { ContactList } from "./db.js";
 
 let Contactos = () => {
-    let sectionContactos = document.createElement("section");
-    sectionContactos.className = "contactos";
+  let sectionContactos = document.createElement("section");
+  sectionContactos.className = "contactos";
 
-    let h2 = document.createElement("h2");
-    h2.textContent = "Lista de contactos";
-    sectionContactos.appendChild(h2);
+  let h2 = document.createElement("h2");
+  h2.textContent = "Lista de contactos";
+  sectionContactos.appendChild(h2);
 
-    ContactList.forEach((contact) => {
-        sectionContactos.appendChild(ItemContacto("account.svg",
-            contact.nombre, contact.telefono));
-    });
+  ContactList.forEach((contact) => {
+    sectionContactos.appendChild(
+      ItemContacto("account.svg", contact.nombre, contact.telefono),
+    );
+  });
 
-    return sectionContactos;
+  return sectionContactos;
 };
 export { Contactos };

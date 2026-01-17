@@ -1,54 +1,63 @@
 import { ToDoList } from "../ToDoList/db.js";
 
 let NuevaTarea = () => {
-    let sectionNuevaTarea = document.createElement("section");
-    sectionNuevaTarea.className = "nueva-tarea";
+  // Crear sección para la nueva tarea
+  let sectionNuevaTarea = document.createElement("section");
+  sectionNuevaTarea.className = "nueva-tarea";
 
-    // Título
-    let h2 = document.createElement("h2");
-    h2.textContent = "Añadir Tarea";
+  // Título
+  let h2 = document.createElement("h2");
+  h2.textContent = "Añadir Tarea";
 
-    // Formulario
-    let form = document.createElement("form");
+  // Crear formulario
+  let form = document.createElement("form");
 
-    // Input Tarea
-    let inputTarea = document.createElement("input");
-    inputTarea.type = "text";
-    inputTarea.placeholder = "Tarea";
-    inputTarea.name = "tarea";
-    inputTarea.required = true;
-    // Input Prioridad
-    let inputPrioridad = document.createElement("input");
-    inputPrioridad.type = "text";
-    inputPrioridad.placeholder = "Prioridad";
-    inputPrioridad.name = "prioridad";
-    inputPrioridad.required = true;
-    // Botón Agregar
-    let btnAgregar = document.createElement("button");
-    btnAgregar.type = "submit";
-    btnAgregar.textContent = "Agregar";
+  // Input para la tarea
+  let inputTarea = document.createElement("input");
+  inputTarea.type = "text";
+  inputTarea.placeholder = "Tarea";
+  inputTarea.name = "tarea";
+  inputTarea.required = true;
 
-    // Estructura
-    form.appendChild(inputTarea);
-    form.appendChild(inputPrioridad);
-    form.appendChild(btnAgregar);
+  // Input para la prioridad
+  let inputPrioridad = document.createElement("input");
+  inputPrioridad.type = "text";
+  inputPrioridad.placeholder = "Prioridad";
+  inputPrioridad.name = "prioridad";
+  inputPrioridad.required = true;
 
-    sectionNuevaTarea.appendChild(h2);
-    sectionNuevaTarea.appendChild(form);
+  // Botón de agregar
+  let btnAgregar = document.createElement("button");
+  btnAgregar.type = "submit";
+  btnAgregar.textContent = "Agregar";
 
-    form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        let tarea = {
-            titulo: inputTarea.value,
-            prioridad: inputPrioridad.value
-        };
-        console.log (ToDoList);
-        console.log(tarea);
-        ToDoList.push(tarea);
-        console.log (ToDoList);
-    });
+  // Agregar inputs y botón al formulario
+  form.appendChild(inputTarea);
+  form.appendChild(inputPrioridad);
+  form.appendChild(btnAgregar);
 
-    return sectionNuevaTarea;
+  // Agregar título y formulario a la sección
+  sectionNuevaTarea.appendChild(h2);
+  sectionNuevaTarea.appendChild(form);
+
+  // Manejar la acción de agregar tarea
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    // Crear el objeto tarea con los valores del formulario
+    let tarea = {
+      titulo: inputTarea.value,
+      prioridad: inputPrioridad.value,
+    };
+
+    // Mostrar información en consola y agregar la tarea a la lista
+    console.log(tarea);
+    ToDoList.push(tarea);
+    form.reset();
+  });
+
+  // Devolver la sección con el formulario
+  return sectionNuevaTarea;
 };
 
 export { NuevaTarea };
