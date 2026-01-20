@@ -1,21 +1,15 @@
 /* Login */
 .login {
   width: 300px;
-  margin: 200px auto;
   padding: 25px;
-    transform: translateX(-90px);
-
   display: flex;
   flex-direction: column;
   gap: 15px;
-
   background: #ffffff;
   border-radius: 10px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-
   font-family: Arial, sans-serif;
 }
-
 
 /* Título */
 .login h3 {

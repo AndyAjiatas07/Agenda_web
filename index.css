@@ -7,30 +7,33 @@
 
 /* Layout principal */
 #app {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  min-height: 100vh;
   display: flex;
-  background-color: #f5f6fa;
   gap: 10px;
 }
+
 
 /* Barra lateral */ 
 #nav {
   width: 220px;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   gap: 10px;
   border-right: 1px solid black;
-
 }
+
 
 /* estado oculto */
 #nav.hidden {
-  transform: translateX(-100%);
+  width: 0;
+  padding: 0;
+  border: none;
+  overflow: hidden;
   opacity: 0;
   pointer-events: none;
 }
+
 
 
 /* Contenido dinámico */
@@ -39,4 +42,51 @@
   height: auto;
   flex: 1;
   padding: 20px;
+}
+
+@media (max-width: 768px) {
+  #app {
+    flex-wrap: wrap;
+  }
+
+  #nav {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid black;
+  }
+
+  #container {
+    width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  #nav {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 8px 0;
+  }
+
+  #nav img,
+  #nav svg {
+    width: 60px;
+    height: 60px;
+  }
+
+  #nav button,
+  #nav a {
+    padding: 6px;
+  }
+}
+@media (max-width: 768px) {
+  #nav img {
+    max-width: 60px;
+    max-height: 60px;
+  }
+}
+
+#container:has(.login) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

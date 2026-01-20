@@ -1,42 +1,41 @@
 import { viewInfoContact } from "../../layout/nav/NavControllers.js";
 
-let ItemContacto = (imgContacto, alias, numUno, numDos, nombre, ubicacion, tipo) => {
-  let div = document.createElement("div");
-  div.className = "item-contacto";
+let ItemContacto = (contact) => {
+  let button = document.createElement("button");
+  button.className = "button item-contacto";
 
-  let etiquetaImg = document.createElement("img");
-  etiquetaImg.src = `./src/assets/icons/${imgContacto}`;
+  let imageContainer = document.createElement("div");
+  imageContainer.className = "button-image";
 
-  let etiquetaAlias = document.createElement("p");
-  etiquetaAlias.textContent = alias;
+  let img = document.createElement("img");
+  img.src = "./src/assets/icons/account.svg";
 
-  let etiquetaPrimerNum = document.createElement("p");
-  etiquetaPrimerNum.textContent = numUno;
 
-  let etiquetaSegundoNum = document.createElement("p");
-  etiquetaSegundoNum.textContent = numDos;
+  let etiquetaNombre = document.createElement("div");
+  etiquetaNombre.className = "button-text";
+  etiquetaNombre.textContent = contact.nombre;
 
-  let etiquetaNombre = document.createElement("p");
-  etiquetaNombre.textContent = nombre;
-  
-  let etiquetaUbicacion = document.createElement("p");
-  etiquetaUbicacion.textContent = ubicacion;
+  let etiquetaPrimerNum = document.createElement("div");
+  etiquetaPrimerNum.className = "button-text";
+  etiquetaPrimerNum.textContent = contact.numUno;
 
-  let etiquetaTipo = document.createElement("p");
-  etiquetaTipo.textContent = tipo;
+  imageContainer.appendChild(img);
+  button.appendChild(imageContainer);
+  button.appendChild(etiquetaNombre);
+  button.appendChild(etiquetaPrimerNum);
 
-  div.appendChild(etiquetaImg);
-  div.appendChild(etiquetaAlias);
-  div.appendChild(etiquetaPrimerNum); 
-  div.appendChild(etiquetaSegundoNum);
-  div.appendChild(etiquetaNombre);
-  div.appendChild(etiquetaUbicacion);
-  div.appendChild(etiquetaTipo);
-
-  div.addEventListener("click", () => {
-    viewInfoContact(alias, numUno, numDos, nombre, ubicacion, tipo);
+  button.addEventListener("click", () => {
+    viewInfoContact(
+      contact.alias,
+      contact.numUno,
+      contact.numDos,
+      contact.nombre,
+      contact.ubicacion,
+      contact.tipo
+    );
   });
 
-  return div;
+  return button;
 };
+
 export { ItemContacto };

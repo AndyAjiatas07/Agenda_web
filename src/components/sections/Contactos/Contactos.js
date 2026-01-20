@@ -11,7 +11,7 @@ let Contactos = () => {
 
   ContactList.forEach((contact) => {
     sectionContactos.appendChild(
-      ItemContacto("account.svg", contact.alias,  contact.numUno, contact.numDos, contact.nombre, contact.ubicacion, contact.tipo),
+ItemContacto(contact),
     );
   });
 

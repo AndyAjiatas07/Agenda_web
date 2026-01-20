@@ -1,5 +1,7 @@
 let Button = (title, id, img, callback) => {
   let div = document.createElement("div");
+  div.className = "button";
+
   div.id = id;
 
   let divImage = document.createElement("div");
