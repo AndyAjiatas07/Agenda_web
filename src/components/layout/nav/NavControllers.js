@@ -3,10 +3,15 @@ import { NuevoContacto } from "../../sections/NuevoContacto/NuevoContacto.js";
 import { Tareas } from "../../sections/ToDoList/ToDoList.js";
 import { NuevaTarea } from "../../sections/NuevaTarea/NuevaTarea.js";
 import { Login } from "../../sections/Login/Login.js";
+import { InfoContacto } from "../../sections/InfoContacto/InfoContacto.js";
+
 
 let container = document.getElementById("container");
+let nav = document.getElementById("nav");
+
 
 let viewContacts = function () {
+  nav.classList.remove("hidden");
   container.innerHTML = "";
   container.appendChild(Contactos());
 };
@@ -26,9 +31,17 @@ let viewTasks = function () {
   container.appendChild(Tareas());
 };
 
-const viewLogin = () => {
+const viewLogin = function () {
+  nav.classList.add("hidden");
   container.innerHTML = "";
   container.appendChild(Login());
 };
 
-export { viewContacts, viewNewContact, viewNewTask, viewTasks, viewLogin };
+const viewInfoContact = function (alias, numUno, numDos, nombre, ubicacion, tipo) {
+  container.innerHTML = "";
+  container.appendChild(InfoContacto(alias, numUno, numDos, nombre, ubicacion, tipo));
+}
+
+
+
+export { viewContacts, viewNewContact, viewNewTask, viewTasks, viewLogin, viewInfoContact };

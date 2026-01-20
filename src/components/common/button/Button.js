@@ -6,7 +6,7 @@ let Button = (title, id, img, callback) => {
   divImage.className = "button-image";
 
   let imgIcon = document.createElement("img");
-  imgIcon.src = `./assets/icons/${img}`;
+  imgIcon.src = `./src/assets/icons/${img}`;
   imgIcon.alt = title;
   divImage.appendChild(imgIcon);
 

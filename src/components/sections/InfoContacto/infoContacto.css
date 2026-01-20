@@ -1,0 +1,63 @@
+/* Estilo base para la sección */
+.info-contacto {
+  display: flex;
+  flex-direction: row; /* Organiza los elementos en una fila */
+  align-items: flex-start; /* Alinea la imagen y el texto al inicio */
+  padding: 50px;
+  border: 1px solid #ddd; /* Borde gris claro alrededor del contenedor */
+  background-color: #f9f9f9; /* Fondo blanco del contenedor */
+  border-radius: 8px; /* Bordes redondeados */
+  width: auto; /* Ajusta el contenedor al tamaño del contenido */
+  margin: 20px auto; /* Márgenes para centrar el contenedor en la página */
+  box-sizing: border-box; /* Asegura que el padding y los bordes se incluyan en el tamaño total */
+  max-width: 100%; /* Se adapta al contenedor padre sin un límite fijo */
+}
+
+
+
+/* Estilo para la imagen del contacto */
+.info-contacto img {
+  width: 500px; /* Ajusta el tamaño de la imagen a 200px */
+  height: 500px; /* Ajusta la altura de la imagen */
+  border-radius: 50%; /* Hace la imagen redonda */
+  object-fit: cover; /* Asegura que la imagen se recorte de manera adecuada */
+  margin-right: 70px; /* Espacio entre la imagen y la información */
+}
+
+/* Contenedor para la información del contacto */
+.info-contacto .info-text {
+  flex: 1; /* Esto hace que la información ocupe el espacio restante */
+  display: flex;
+  flex-direction: column; /* Organiza la información de arriba hacia abajo */
+  justify-content: flex-start; /* Alinea la información desde arriba */
+}
+
+/* Estilos para los párrafos */
+.info-contacto p {
+  margin: 5px 0;
+  font-size: 16px;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* Estilo para el título */
+.info-contacto h2 {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+/* Estilo para el botón */
+.info-contacto button {
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 15px; /* Da espacio entre el contenido y el botón */
+}
+
+.info-contacto button:hover {
+  background-color: #0056b3;
+}

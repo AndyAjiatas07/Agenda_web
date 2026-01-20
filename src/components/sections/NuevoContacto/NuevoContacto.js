@@ -11,6 +11,27 @@ let NuevoContacto = () => {
   // Formulario
   let form = document.createElement("form");
 
+  // Input Alias
+  let inputAlias = document.createElement("input");
+  inputAlias.type = "text";
+  inputAlias.placeholder = "Alias";
+  inputAlias.name = "alias";
+  inputAlias.required = true;
+
+  // Input Teléfono 1
+  let inputNumUno = document.createElement("input");
+  inputNumUno.type = "tel";
+  inputNumUno.placeholder = "Teléfono 1";
+  inputNumUno.name = "numUno";
+  inputNumUno.required = true;
+
+  // Input Teléfono 2
+  let inputNumDos = document.createElement("input");
+  inputNumDos.type = "tel";
+  inputNumDos.placeholder = "Teléfono 2";
+  inputNumDos.name = "numDos";
+  inputNumDos.required = false;
+
   // Input Nombre
   let inputNombre = document.createElement("input");
   inputNombre.type = "text";
@@ -18,12 +39,19 @@ let NuevoContacto = () => {
   inputNombre.name = "nombre";
   inputNombre.required = true;
 
-  // Input Teléfono
-  let inputTelefono = document.createElement("input");
-  inputTelefono.type = "tel";
-  inputTelefono.placeholder = "Teléfono";
-  inputTelefono.name = "telefono";
-  inputTelefono.required = true;
+  // Input Ubicación
+  let inputUbicacion = document.createElement("input");
+  inputUbicacion.type = "text";
+  inputUbicacion.placeholder = "Ubicación";
+  inputUbicacion.name = "ubicacion";
+  inputUbicacion.required = true;
+
+  // Input Tipo
+  let inputTipo = document.createElement("input");
+  inputTipo.type = "text";
+  inputTipo.placeholder = "Tipo";
+  inputTipo.name = "tipo";
+  inputTipo.required = true;
 
   // Botón Agregar
   let btnAgregar = document.createElement("button");
@@ -31,8 +59,12 @@ let NuevoContacto = () => {
   btnAgregar.textContent = "Agregar";
 
   // Estructura
+  form.appendChild(inputAlias);
+  form.appendChild(inputNumUno);
+  form.appendChild(inputNumDos);
   form.appendChild(inputNombre);
-  form.appendChild(inputTelefono);
+  form.appendChild(inputUbicacion);
+  form.appendChild(inputTipo);
   form.appendChild(btnAgregar);
 
   sectionNuevoContacto.appendChild(h2);
@@ -41,8 +73,12 @@ let NuevoContacto = () => {
   form.addEventListener("submit", (e) => {
     e.preventDefault();
     let contacto = {
+      alias: inputAlias.value,
+      numUno: inputNumUno.value,
+      numDos: inputNumDos.value,
       nombre: inputNombre.value,
-      telefono: inputTelefono.value,
+      ubicacion: inputUbicacion.value,
+      tipo: inputTipo.value,
     };
     console.log(contacto);
     ContactList.push(contacto);

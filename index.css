@@ -1,0 +1,42 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Layout principal */
+#app {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  background-color: #f5f6fa;
+  gap: 10px;
+}
+
+/* Barra lateral */ 
+#nav {
+  width: 220px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-right: 1px solid black;
+
+}
+
+/* estado oculto */
+#nav.hidden {
+  transform: translateX(-100%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+
+/* Contenido dinámico */
+#container {
+  min-height: 100vh;
+  height: auto;
+  flex: 1;
+  padding: 20px;
+}

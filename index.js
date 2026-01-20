@@ -1,11 +1,6 @@
-import { Button } from "./components/common/button/Button.js";
-import { Contactos } from "./components/sections/Contactos/Contactos.js";
-import { viewContacts, viewNewContact, viewNewTask, viewTasks ,viewLogin} from "./components/layout/nav/NavControllers.js";
-
-let app = document.getElementById("app");
-
+import { Button } from "./src/components/common/button/Button.js";
+import { viewContacts, viewNewContact, viewNewTask, viewTasks ,viewLogin} from "./src/components/layout/nav/NavControllers.js";
 let nav = document.getElementById("nav");
-
 nav.appendChild(Button(
     "Usuario",
     "usuario",
@@ -37,8 +32,4 @@ nav.appendChild(Button(
     "add.svg",
     viewNewTask
 ));
-
-let container = document.getElementById("container");
-
-container.innerHTML = "";
-container.appendChild(Contactos());
+viewLogin();

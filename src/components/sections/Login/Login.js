@@ -2,6 +2,7 @@ import { viewContacts } from "../../layout/nav/NavControllers.js";
 
 let Login = function () {
   let login = document.createElement("section");
+  login.className = "login";
 
   let h3 = document.createElement("h3");
   h3.innerHTML = "Login";
