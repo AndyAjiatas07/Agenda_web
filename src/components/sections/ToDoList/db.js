@@ -2,16 +2,6 @@ import { getTasksFromStorage, saveTasksToStorage } from "./storage.js";
 
 let ToDoList = getTasksFromStorage();
 
-if (ToDoList.length === 0) {
-  ToDoList = [
-    { id: 1, titulo: "Limpiar", prioridad: "Alta" },
-    { id: 2, titulo: "Comprar", prioridad: "Media" },
-    { id: 3, titulo: "Estudiar", prioridad: "Baja" },
-  ];
-
-  saveTasksToStorage(ToDoList);
-}
-
 function addTask(tarea) {
   ToDoList.push(tarea);
   saveTasksToStorage(ToDoList);
