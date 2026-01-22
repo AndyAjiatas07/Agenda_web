@@ -4,6 +4,8 @@ import { goToNuevaTareaEdit } from "../../sections/NuevaTarea/NuevaTarea.js";
 let ItemTarea = (tarea) => {
   let button = document.createElement("button");
   button.className = "button item-tarea";
+  button.classList.add(`prioridad-${tarea.prioridad}`);
+
 
   let icon = document.createElement("img");
   icon.src = "./src/assets/icons/task.svg";

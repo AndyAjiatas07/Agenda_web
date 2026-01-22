@@ -1,5 +1,8 @@
 import { addTask, updateTask } from "../ToDoList/db.js";
-import { viewTasks, viewNewTask } from "../../../components/layout/nav/NavControllers.js";
+import {
+  viewTasks,
+  viewNewTask,
+} from "../../../components/layout/nav/NavControllers.js";
 
 let taskToEdit = null;
 
@@ -21,9 +24,18 @@ let NuevaTarea = () => {
   inputTarea.placeholder = "Tarea";
   inputTarea.required = true;
 
-  let inputPrioridad = document.createElement("input");
-  inputPrioridad.placeholder = "Prioridad";
+  let inputPrioridad = document.createElement("select");
+  inputPrioridad.className = "select-prioridad";
   inputPrioridad.required = true;
+
+  let prioridades = ["alta", "media", "baja"];
+
+  prioridades.forEach((p) => {
+    let option = document.createElement("option");
+    option.value = p;
+    option.textContent = p.charAt(0).toUpperCase() + p.slice(1);
+    inputPrioridad.appendChild(option);
+  });
 
   let btnAgregar = document.createElement("button");
   btnAgregar.type = "submit";

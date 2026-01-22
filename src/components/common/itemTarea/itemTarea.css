@@ -19,3 +19,39 @@
   min-height: 60px;
   object-fit: contain;
 }
+
+/* Base */
+.item-tarea {
+  color: black;
+  border: none;
+}
+
+/* ALTA – rojo muy suave */
+.prioridad-alta {
+  background: radial-gradient(
+    circle,
+    rgba(229, 57, 53, 0.25) 0%,
+    rgba(229, 57, 53, 0.15) 50%,
+    rgba(229, 57, 53, 0.05) 100%
+  );
+}
+
+/* MEDIA – naranja muy suave */
+.prioridad-media {
+  background: radial-gradient(
+    circle,
+    rgba(251, 140, 0, 0.25) 0%,
+    rgba(251, 140, 0, 0.15) 50%,
+    rgba(251, 140, 0, 0.05) 100%
+  );
+}
+
+/* BAJA – verde muy suave */
+.prioridad-baja {
+  background: radial-gradient(
+    circle,
+    rgba(67, 160, 71, 0.25) 0%,
+    rgba(67, 160, 71, 0.15) 50%,
+    rgba(67, 160, 71, 0.05) 100%
+  );
+}
